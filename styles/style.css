@@ -1,3 +1,4 @@
+
 .shadow-decor {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -13,7 +14,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  overflow-x: hidden;
 }
 
 .cover {
@@ -56,8 +56,7 @@
 }
 
 .link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
+  border-block-end: 1px solid currentColor;
 }
 
 .link:focus {
@@ -116,6 +115,11 @@
   background-color: var(--accent-color);
 }
 
+.title-small {
+  font-size: inherit;
+  font-weight: 400;
+}
+
 .section {
   display: grid;
   gap: 20px;
@@ -154,6 +158,8 @@
 
 .header {
   align-items: start;
+  height: 100vh;
+  min-height: 668px;
 }
 
 .header__theme-menu {
@@ -171,6 +177,7 @@
   border: 1px solid transparent;
   padding: 2px 12px;
   color: var(--secondary-color);
+  font: inherit;
   line-height: 18px;
   text-transform: lowercase;
   background: transparent;
@@ -196,10 +203,15 @@
 
 .header__title {
   align-self: center;
-  margin-block: 55px;
+  justify-self: end;
+  max-inline-size: 100%;
   color: var(--highlight-color);
   font-weight: 700;
   background-color: var(--accent-color);
+}
+
+.header__title p {
+  margin: 0;
 }
 
 .main {
@@ -210,6 +222,8 @@
 
 .footer {
   place-items: center;
+  height: 100vh;
+  min-height: 668px;
 }
 
 @media (width >= 768px) {
@@ -228,7 +242,6 @@
 
   .section-what__articles-list {
     grid-column: 2;
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .section-how__content {
@@ -270,7 +283,6 @@
   }
 
   .header__title {
-    justify-self: end;
     inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
   }
 
@@ -287,6 +299,7 @@
 
   .section-what__articles-list {
     grid-column: 2;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .header__theme-menu {
